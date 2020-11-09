@@ -1,0 +1,558 @@
+:root {
+  --culoare-meniu-stanga: #312450;
+  --culoare-content-dreapta: #5E42A6;
+  --culoare-item-meniu-stanga: #3C2C62;
+  --culoare-item-meniu-stanga-hover: #B34E92;
+  --culoare-link-meniu-stanga: #6A6F8C;
+  --culoare-link-meniu-stanga-hover: #FFFFE9;
+
+  --culoare-h1: #FFFFFF;
+  --culoare-paragraf-titlu: #B6A9D7;
+
+  --culoare-nume-pisica: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+html { 
+  background-color: var(--culoare-meniu-stanga);
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+}
+
+body .row {
+  background-color: var(--culoare-content-dreapta);
+}
+
+#meniu-stanga {
+  background-color: var(--culoare-meniu-stanga);
+  display: flex;
+  flex-direction: column;
+
+}
+
+#meniu-stanga .header-meniu-stanga {
+  position: fixed;
+  width: 25%;
+}
+
+nav { 
+  padding-top: 30vh !important;
+  position: fixed;
+  height: 70%;
+
+}
+
+#meniu-stanga .lista-meniu-stanga {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 30vh !important;
+}
+
+#meniu-stanga .item-meniu-stanga {
+  border-bottom: 4px solid var(--culoare-item-meniu-stanga);
+}
+#meniu-stanga .item-meniu-stanga:hover {
+  border-bottom: 4px solid var(--culoare-item-meniu-stanga-hover);
+}
+
+#meniu-stanga .item-meniu-stanga:hover .link-meniu-stanga {
+  color: var(--culoare-link-meniu-stanga-hover);
+}
+
+#meniu-stanga .link-meniu-stanga {
+  text-decoration: none;
+  color: var(--culoare-link-meniu-stanga);
+  font-size: 1.25em;
+  display: block;
+}
+
+
+#content-dreapta {
+  background-color: var(--culoare-content-dreapta);
+  height: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#content-dreapta .titlu {
+  text-align: left;
+  text-justify: distribute;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+}
+
+#content-dreapta .sub-titlu {
+  width: 100% !important;
+}
+
+.titlu p {
+  padding-bottom: 25vh;
+  padding-top: 1em;
+  color: white !important;
+  padding-right: 1em;
+  font-size: 1.25em;
+  width: 50%;
+}
+
+#content-dreapta .titlu {
+  color: var(--culoare-h1);
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+}
+
+.titlu h1 {
+  font-size: 3.7em;
+  font-weight: bold;
+}
+#content-dreapta .sub-titlu {
+  color: var(--culoare-paragraf-titlu);
+  font-size: 1.25em;
+}
+
+.container-pisica {
+  background-color: var(--culoare-container-pisica-odd);
+  margin-left: 0px;
+}
+
+.container-pisica .container-imagine-pisica {
+  height: 360px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container-imagine-pisica img {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container-pisica .container-text-pisica {
+  text-align: left;
+padding: 3em;
+display: flex;
+flex-direction: column;
+height: 360px;
+justify-content: center;
+align-items: center;
+}
+
+.container-text-pisica h2 {
+  color: var(--culoare-nume-pisica);
+  font-weight: 200;
+  font-size: 3em;
+}
+
+.container-text-pisica p {
+  color: var(--culoare-nume-pisica);
+  font-size: 1em;
+}
+
+.descriere-pisica {
+  margin: 0px;
+  font-size: 1em;
+}
+
+.container-formular {
+  background-color: #B74E91 !important;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-formular .container-formulare {
+  background-color: #BB5797;
+  border: 2px solid #C570A7;
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  height: 60%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container-formulare label {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.container-formulare #input-nume-pisica {
+  height: 2.75em;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.container-formulare #input-descriere-pisica {
+  height: 10em;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 100%;
+  text-align: left;
+  resize: none;
+}
+
+.container-formulare #submit-cat {
+  height: 0px;
+  width: 0px;
+  margin: 0px;
+  padding: 0px;
+  border-style: none;
+  visibility: hidden;
+}
+
+.container-formulare #confirm-name-desc {
+  height: 2.75em;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.container-formulare #browse-cat-pic {
+ height: 76%;
+ width: 360px;
+}
+
+.container-formulare #submit-cat-pic {
+  height: 0px;
+  width: 0px;
+  margin: 0px;
+  padding: 0px;
+  border-style: none;
+  visibility: hidden;
+}
+
+.container-formulare #trigger-submit {
+  height: 2.75em;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 100%;
+}
+
+#formular-add-cat-form {
+ text-align: center;
+ height: 360px;
+ width: 360px;
+ border: 2px solid #C570A7;
+}
+
+#formular-add-cat-pic {
+  text-align: center;
+  height: 360px;
+  width: 360px;
+  border: 2px solid #C570A7;
+  background-image: url("/images/icon-photo.png");
+  background-size: 100% 100%;
+  visibility: hidden;
+}
+
+#formular-add-cat {
+  height: 360px;
+  width: 360px;
+}
+
+#formular-add-pic {
+  height: 360px;
+  width: 360px;
+}
+
+#browse-cat-pic {
+  opacity: 0;
+}
+
+/* PUNE MEDIA QUERY SEPARAT PENTRU FIECARE TIP DE DEVICE: tel, tableta, landscape, portrait, rezolutii laptop si monitor. 
+acolo fiecare o sa aiba o alta marime la font, alt aranjament, etc. cand vezi spatiu alb jos, pune padding-bottom la ultimul div class="container-pisica row".
+Toate media query o sa arate cam la fel, dar fa pt fiecare tip de device si orientare device. ce e scris inainte de media queries acum sunt asa la modul general culori etc
+DEOCAMDATA LASA TOT DIN BOOTSTRAP
+*/
+
+/* XS <576px */
+@media screen and (min-width: 0px) and (max-width: 575px) {
+  #meniu-stanga {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    top: 0 !important;
+  }
+
+  #meniu-stanga .header-meniu-stanga {
+    width: 100%;
+  }
+
+  #meniu-stanga .lista-meniu-stanga {
+    padding-left: 0px;
+    top: 0 !important;
+  }
+
+  nav { 
+    padding-top: 30vh !important;
+    margin-left: 30% !important;
+    position: fixed;
+  }
+  #content-dreapta .titlu {
+    height: 100vh;
+    padding-top: 30vh;
+    text-align: center;
+  }
+  .titlu p {
+    padding: 2em;
+  }
+
+  #container-dreapta .container-imagine-pisica {
+    height: 360px;
+  }
+
+  #container-dreapta .container-text-pisica {
+    text-align: left;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  height: 360px;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .container-text-pisica h2,p {
+    text-align: center;
+  }
+    
+}
+
+/* SM ≥576px */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  #meniu-stanga {
+    background-color: var(--culoare-meniu-stanga);
+    height: 10vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+#meniu-stanga .header-meniu-stanga {
+  height: inherit;
+}
+
+ #meniu-stanga .lista-meniu-stanga {
+    padding-top: 0px !important;
+    height: 100%;
+    margin-bottom: 0px;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 0px;
+  }
+
+.lista-meniu-stanga li {
+  padding: 1em;
+  font-size: 0.9em !important;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: start;
+}
+
+.link-meniu-stanga {
+  font-size: 1.1em !important;
+  display: block;
+}
+
+  #content-dreapta .titlu {
+    height: 100vh;
+    padding-top: 30vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .titlu h1 {
+    text-align: center;
+  }
+
+  .sub-titlu {
+  width: 100% !important;
+  }
+
+.container-text-pisica {
+  text-align: left;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  height: 360px !important;
+  justify-content: center;
+  align-items: center;
+}
+
+  .sub-titlu p{
+    text-align: center !important;
+    padding: 2em;
+    width: 100%;
+  }
+
+  #container-dreapta .container-imagine-pisica {
+    height: 360px !important;
+  }
+  
+  .container-text-pisica h2,p {
+    text-align: center;
+  }
+}
+
+/* MD ≥768px */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  
+  #meniu-stanga {
+    background-color: var(--culoare-meniu-stanga);
+    height: 10vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+#meniu-stanga .header-meniu-stanga {
+  width: 100%;
+  text-align: center;
+  height: inherit;
+}
+
+ #meniu-stanga .lista-meniu-stanga {
+    padding-top: 0px !important;
+    height: 100%;
+    margin-bottom: 0px;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 0px;
+  }
+
+.lista-meniu-stanga li {
+  padding: 1em;
+  font-size: 0.9em !important;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: start;
+}
+
+.link-meniu-stanga {
+  font-size: 1.1em !important;
+  display: block;
+}
+
+  #content-dreapta .titlu {
+    height: 100vh;
+    padding-top: 30vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .titlu h1 {
+    text-align: center;
+  }
+
+.sub-titlu {
+  width: 100% !important;
+}
+
+  .sub-titlu p{
+    text-align: center !important;
+    padding: 2em;
+    width: 100%;
+  }
+
+.container-text-pisica {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+
+  .container-text-pisica h2,p{
+    text-align: center;
+  }
+}
+
+/* LG ≥992px */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  nav { 
+    padding-top: 30vh !important;
+    position: fixed;
+  }
+
+  #meniu-stanga {
+    padding-right: 0px;
+  }
+
+  #meniu-stanga .header-meniu-stanga {
+    position: fixed;
+    width: 33%;
+  }
+
+  #meniu-stanga .lista-meniu-stanga {
+    padding-left: 0px;
+    text-align: center;
+  }
+
+  #content-dreapta .titlu {
+    height: 100vh;
+    padding-top: 30vh;
+    text-align: left;
+    padding-left: 6em;
+  }
+  .titlu p {
+
+  }
+}
+
+/* XL ≥1200px */
+@media screen and (min-width: 1200px) {
+  nav { 
+    padding-top: 30vh !important;
+    position: fixed;
+  }
+
+  #meniu-stanga {
+    padding-right: 0px;
+  }
+
+  #meniu-stanga .lista-meniu-stanga {
+    padding-left: 0px;
+    text-align: center;
+  }
+
+  #content-dreapta .titlu {
+    height: 100vh;
+    padding-top: 30vh;
+    text-align: left;
+    padding-left: 6em;
+  }
+  .titlu p {
+
+  }
+}

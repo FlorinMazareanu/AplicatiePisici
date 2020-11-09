@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--   PAGINA ASTA E LUATA DUPA LINKUL ASTA: https://html5up.net/hyperspace   -->
+<html>
+  <head>
+    <title>Adauga o pisica aici</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+
+  <body>
+    <div class="row">
+      <section id="meniu-stanga" class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-3">
+        <header class="header-meniu-stanga">
+              <ul class="lista-meniu-stanga">
+                <li class="item-meniu-stanga">
+                  <a class="link-meniu-stanga" href="/">HOME</a>
+                </li>
+                <li class="item-meniu-stanga">
+                  <a class="link-meniu-stanga" href="#capitol-lista-pisici">PISICI</a>
+                </li>
+                <li class="item-meniu-stanga">
+                  <a class="link-meniu-stanga" href="/addCat">ADAUGA</a>
+                </li>
+                <li class="item-meniu-stanga">
+                  <a class="link-meniu-stanga" href="#">LOGIN</a>
+                </li>
+                <li class="item-meniu-stanga">
+                  <a class="link-meniu-stanga" href="#">DESPRE</a>
+                </li>
+                <li class="item-meniu-stanga">
+                  <a class="link-meniu-stanga" href="#">CONTACT</a>
+                </li>
+              </ul>
+        </header>   
+      </section>
+
+    <section id="content-dreapta" class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9">
+        <div class="titlu">
+          <h1> Adauga o pisica in pisicarie </h1>
+          <p class="sub-titlu">Scroll in jos pentru a adauga o pisica</p>
+          <!-- AICI PUNE UN FORMULAR CU UN POST REQUEST CA SA INSEREZI IN BAZA DE DATE -->
+        </div>
+
+        <div id="capitol-formular" class="container-formular">
+            <div class="container-formulare">
+              <div id="formular-add-cat">
+                <form id="formular-add-cat-form" action=".\addCatInDB" enctype="multipart/form-data" method="POST">
+                  <label for="input-nume-pisica">Nume pisica:</label><br>
+                  <input type="text" id="input-nume-pisica" name="numePisica" value=""><br>
+                  <label for="input-descriere-pisica">Descriere pisica:</label><br>
+                 <!--aici e input, am pus mai jos textarea ca e mai fancy <input type="text" id="input-descriere-pisica" name="descrierePisica" value=""><br> -->
+                  <textarea id="input-descriere-pisica" name="descrierePisica" rows="4" cols="50"></textarea>
+
+                  <label for="input-detalii-pisica" style="display: none;">Detalii pisica:</label><br>
+                  <input type="text" id="input-descriere-pisica" name="detaliiPisica" value="detalii" style="display: none;"><br>
+                  <button type="button" id="confirm-name-desc">CONFIRMA</button>
+                  <input id="submit-cat" type="submit" value="DE TRIGGERAT POST">
+                </form>
+              </div>
+                <!-- AICI PUNE UN FORMULAR CU UN POST REQUEST CA ADAUGI POZA -->
+                <!-- SI FA SA APARA BUTONUL "ADAUGA DETALII PISICA" SI CHESTIA CU PIC ADD DUPA CE AI VALIDAT NUME/DESCRIERE-->
+              <div id="formular-add-pic">
+                <form id="formular-add-cat-pic" action=".\addCatPic" enctype="multipart/form-data" method="POST">
+                  <label for="input-imagine-pisica">Imagine pisica:</label><br>        
+                  <input id="browse-cat-pic" type="file" accept="image/*" name="imaginePisicaBrowse" /><br>
+                  <input type="hidden" id="poza-filename" name="imaginePisica" value="pisica"/>
+                  <button type="button" id="trigger-submit">ADD CAT</button>
+                  <input id="submit-cat-pic" type="submit" value="ADD CAT">
+                </form>
+              </div>
+            </div>
+        </div>
+          <script>
+          
+          //Form validation:
+
+          document.getElementById("confirm-name-desc").addEventListener("click", function(){
+            let verificareInputNume = document.getElementById("input-nume-pisica").value;
+            let verificareInputDescriere = document.getElementById("input-descriere-pisica").value;
+            if (verificareInputNume == "") {
+              document.getElementById("input-nume-pisica").value = "Nume incomplet";
+            }
+            if (verificareInputDescriere == "") {
+              document.getElementById("input-descriere-pisica").value = "Descriere incompleta";
+            }
+            if (verificareInputNume != "" && verificareInputDescriere != "" && verificareInputNume !="Nume incomplet" && verificareInputDescriere != "Descriere incompleta"){
+              document.getElementById("formular-add-cat-pic").style = "visibility: visible;";
+            }       
+          });
+
+          //Event lister pentru buton CONFIRM. Cand dau click, se face submit la ambele formulare:
+
+          document.getElementById("trigger-submit").addEventListener("click", function(){
+              $("#formular-add-cat-form").submit();
+              $("#submit-cat-pic").click();
+          });
+
+          //AJAX pentru formular:
+           $("#formular-add-cat-form").submit(function(e) {
+              e.preventDefault(); // avoid to execute the actual submit of the form.
+              var form = $(this);
+              var url = './addCatInDB';
+
+              $.ajax({
+                type: "POST",
+                url: url,
+                data: form.serialize(), // serializes the form's elements.
+                success: function(data)
+                {
+                  alert(request.data); // show response from the php script.
+                  console.log(request.data); 
+                }
+              });
+          });
+
+          
+          </script>
+        
+
+    </section>
+  </div>
+  </body>
+
+    
+</html>
+
+<script>
+  
+</script>
