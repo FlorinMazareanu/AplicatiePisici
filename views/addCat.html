@@ -105,7 +105,7 @@
               e.preventDefault(); // avoid to execute the actual submit of the form.
               var form = $(this);
               var url = './addCatInDB';
-
+              console.info("sunt aici");
               $.ajax({
                 type: "POST",
                 url: url,
@@ -114,6 +114,9 @@
                 {
                   alert(request.data); // show response from the php script.
                   console.log(request.data); 
+                },
+                error: function(xhr, status, error){
+                  console.info(arguments);
                 }
               });
           });
