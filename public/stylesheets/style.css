@@ -167,7 +167,7 @@ align-items: center;
 }
 
 .container-formular {
-  background-color: #B74E91 !important;
+  background-color: #4C4EAC !important;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -175,8 +175,8 @@ align-items: center;
 }
 
 .container-formular .container-formulare {
-  background-color: #BB5797;
-  border: 2px solid #C570A7;
+  background-color: #4C4EAC;
+  border: 5px solid #5052B5;
   display: flex;
   flex-direction: row;
   width: 85%;
@@ -208,12 +208,10 @@ align-items: center;
 }
 
 .container-formulare #submit-cat {
-  height: 0px;
-  width: 0px;
-  margin: 0px;
-  padding: 0px;
-  border-style: none;
-  visibility: hidden;
+  height: 2.75em;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .container-formulare #confirm-name-desc {
@@ -229,12 +227,10 @@ align-items: center;
 }
 
 .container-formulare #submit-cat-pic {
-  height: 0px;
-  width: 0px;
-  margin: 0px;
-  padding: 0px;
-  border-style: none;
-  visibility: hidden;
+  height: 2.75em;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .container-formulare #trigger-submit {
@@ -248,14 +244,14 @@ align-items: center;
  text-align: center;
  height: 360px;
  width: 360px;
- border: 2px solid #C570A7;
+ border: 5px solid #4C4EAC;
 }
 
 #formular-add-cat-pic {
   text-align: center;
   height: 360px;
   width: 360px;
-  border: 2px solid #C570A7;
+  border: 5px solid #4C4EAC;
   background-image: url("/images/icon-photo.png");
   background-size: 100% 100%;
   visibility: hidden;

@@ -44,18 +44,6 @@ const db = mysql.createConnection ({
     //console.log('Connected to database');
   });
   global.db = db;
-  
-
-/* Aici e POST si da chestii pe pagina cand se face POST, nu si cand se face GET*/
-
-/*
-router.post('/', upload.single('imaginePisica'), function (req, res, next) {
-    // Aici fac teste in consola:
-    console.log("S-a facut post in addCatPic");
-    console.log(req.file.filename);
-    res.send(req.file);
-})
-*/
 
 router.post('/', upload.single('imaginePisicaBrowse'), (req, res) => {
   console.log("s-a facut post pe addCatPic");
@@ -69,14 +57,9 @@ router.post('/', upload.single('imaginePisicaBrowse'), (req, res) => {
     console.log('file received');
     console.log(req.file.originalname);
     let ultimaImagine = req.file.originalname;
-    //console.log(ultimaImagine);
-    //Aici e query care gaseste ultimul ID din tabel:
     var ultimulID;
     function functieCareIaID(result) {
-      //console.log("AICI SE IA ID:")
-      //console.log(result);
       ultimulID = result;
-      //console.log("acum ultimulID == " + ultimulID);
 
       //Aici trebuie sa fac un query in care sa modific ultimul rand din tabel sa aiba req.file.originalname la coloana Imagine:
       var querySchimbaPoza = "UPDATE `tabel_pisici` SET `Imagine` = ? WHERE `ID` = ?";

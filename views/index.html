@@ -25,13 +25,13 @@
                   <a class="link-meniu-stanga" href="/addCat">ADAUGA</a>
                 </li>
                 <li class="item-meniu-stanga">
-                  <a class="link-meniu-stanga" href="#">LOGIN</a>
-                </li>
-                <li class="item-meniu-stanga">
                   <a class="link-meniu-stanga" href="#">DESPRE</a>
                 </li>
                 <li class="item-meniu-stanga">
                   <a class="link-meniu-stanga" href="#">CONTACT</a>
+                </li>
+                <li class="item-meniu-stanga">
+                  <a class="link-meniu-stanga" href="#">LOGIN</a>
                 </li>
               </ul>
         </header>   
@@ -48,24 +48,14 @@
   
   <script>
   $( document ).ready(function() {
-      //console.log( "ready!" );
       $.get('/pisici', function(data){ 
         let countPisica = 1;
-        //console.log(data);
+        console.log(data);
         let arrayPisici = data[0];
-        //console.log(arrayPisici);
-        //console.log(arrayPisici.length);
         arrayPisici.forEach(element => {
-        //teste pt consola:
-        //console.log(element.Nume);
-        //console.log(element.Descriere);
-        //console.log(element.Imagine);
-
-        //aici pun elementele in pagina pt fiecare pisica:
         let bodyElement = document.querySelector('body');
         let contentStangaElement = document.querySelector('#meniu-stanga');
         let containerDreaptaElement = document.querySelector('#content-dreapta');
-        //console.log(bodyElement);
         let containerPisicaElement = document.createElement('div');
         containerPisicaElement.className = "container-pisica row";
         containerDreaptaElement.appendChild(containerPisicaElement);
@@ -90,12 +80,9 @@
         descrierePisicaElement.textContent = element.Descriere;
         containerTextPisicaElement.appendChild(descrierePisicaElement);
 
-        //adaug bootstrap la container-imagine-pisica si la container-text-pisica:
         $(".container-imagine-pisica").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4");
         $(".container-text-pisica").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-8");
-          
-        //aici fac culorile par-impar la container-pisica:
-          
+                 
         if (countPisica % 2 == 0) {
           containerPisicaElement.style.backgroundColor = "#5052B5";
         }
@@ -108,49 +95,6 @@
     });
   });
 
-  //Aici fac script pt resize la fereastra:
-
-  jQuery(document).ready(function($) {
-  var alterClass = function() {
-    var ww = document.body.clientWidth;
-    switch(true){
-      //xs:
-      case (ww < 576): {
-        //alert("XS");
-        break;
-      }
-      //sm:
-      case (ww >= 576 && ww < 768): {
-        //$("#meniu-stanga").addClass("col-sm-4");
-        //$("#content-dreapta").addClass("col-sm-8");
-        //alert("SM");
-        break;
-      }
-      //md:
-      case (ww >= 768 && ww < 992): {
-        //alert("MD");
-        break;
-      }
-      //lg:
-      case (ww >= 992 && ww < 1200): {
-        //alert("LG");
-        break;
-      }  
-      //xl:
-      case (ww >= 1200): {
-        //alert("XL");
-
-        break;
-      }    
-    }
-
-  };
-  $(window).resize(function(){
-    alterClass();
-  });
-  //Fire it when the page first loads:
-  alterClass();
-});
 </script>
 
           
