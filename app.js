@@ -13,13 +13,15 @@ var multer = require('multer');
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var pisiciRouter = require('./routes/pisici');
 var addCatRouter = require('./routes/addCat');
 var addCatInDBRouter = require('./routes/addCatInDB');
 var addCatPicRouter = require('./routes/addCatPic');
+var registerRouter = require('./routes/register');
+var loginRouter = require('./routes/login');
 
 var app = express();
+
 var queries = require('./baze_de_date/queries');
 
 // view engine setup
@@ -35,11 +37,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/pisici', pisiciRouter);
 app.use('/addCat', addCatRouter);
 app.use('/addCatInDB', addCatInDBRouter);
 app.use('/addCatPic', addCatPicRouter);
+app.use('/register', registerRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -50,8 +50,9 @@
   $( document ).ready(function() {
       $.get('/pisici', function(data){ 
         let countPisica = 1;
-        console.log(data);
-        let arrayPisici = data[0];
+        console.log(data.length);
+        let ultimulElemDinData = data.length;
+        let arrayPisici = data[ultimulElemDinData-1];
         arrayPisici.forEach(element => {
         let bodyElement = document.querySelector('body');
         let contentStangaElement = document.querySelector('#meniu-stanga');

@@ -30,6 +30,10 @@ db.query(querySelectPisici, function(err, result) {
 /* Request GET pentru a trimite arrayul de pisici.*/
 router.get('/', function(req, res, next) {
     //res.send(JSON.stringify(arrayPisici));
+    db.query(querySelectPisici, function(err, result) {
+      if(err) throw err;
+      arrayPisici.push(result);
+  });
     res.send(arrayPisici);
   });
 
